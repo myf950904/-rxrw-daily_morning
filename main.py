@@ -26,7 +26,7 @@ def get_weather():
   res = requests.get(url).json()
   weather = res['data']['list'][0]
   temp_day = str(weather['low']) +"° ~"+ str(weather['high']) +"° "
-  return weather['weather'], math.floor(weather['temp']), temp_day, weather['wind']
+  return weather['weather'], str(math.floor(weather['temp'])) + "°", temp_day, weather['wind']
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
@@ -52,6 +52,6 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, temperature, temperature_day, wind = get_weather()
-data = {"date":{"value":get_current_date(),"color":"#808080"},"weather":{"value":wea,"color":get_random_color()},"temperature":{"value":temperature},"temperature_day":{"value":temperature_day,"color":get_random_color()},"wind":{"value":wind,"color":get_random_color()},"love_days":{"value":get_count(),"color":"ba55d3"},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
+data = {"date":{"value":get_current_date(),"color":"#808080"},"weather":{"value":wea,"color":get_random_color()},"temperature":{"value":temperature},"temperature_day":{"value":temperature_day,"color":get_random_color()},"wind":{"value":wind,"color":get_random_color()},"love_days":{"value":get_count(),"color":get_random_color()},"birthday_left":{"value":get_birthday(),"color":get_random_color()},"words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
