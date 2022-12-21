@@ -18,7 +18,7 @@ user_id = os.environ["USER_ID"]
 template_id = os.environ["TEMPLATE_ID"]
 
 def get_current_date():
-  current_date = datetime.strftime("%m-%d").replace("-","月") + "日"
+  current_date = today.strftime("%m-%d").replace("-","月") + "日"
   return current_date
 
 def get_weather():
