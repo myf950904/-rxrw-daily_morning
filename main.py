@@ -16,6 +16,7 @@ app_secret = os.environ["APP_SECRET"]
 
 user_id = os.environ["USER_ID"]
 user_id_other = os.environ["USER_ID_OTHER"]
+user_id_third = os.environ["USER_ID_THIRD"]
 template_id = os.environ["TEMPLATE_ID"]
 love_heart = os.environ["LOVE_HEART"]
 
@@ -59,4 +60,6 @@ res = wm.send_template(user_id, template_id, data)
 print(res)
 res2 = wm.send_template(user_id_other, template_id, data)
 print(res2)
+res3 = wm.send_template(user_id_third, template_id, data)
+print(res3)
 
