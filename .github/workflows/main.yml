@@ -28,6 +28,7 @@ jobs:
       TEMPLATE_ID: ${{ secrets.TEMPLATE_ID }}
       USER_ID: ${{ secrets.USER_ID }}
       USER_ID_OTHER: ${{ secrets.USER_ID_OTHER }}
+      USER_ID_THIRD: ${{ secrets.USER_ID_THIRD }}
       START_DATE: ${{ secrets.START_DATE }}
       BIRTHDAY: ${{ secrets.BIRTHDAY }}
       CITY: ${{ secrets.CITY }}
