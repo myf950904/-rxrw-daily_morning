@@ -59,8 +59,8 @@ wm = WeChatMessage(client)
 data = {"date":{"value":get_current_date(),"color":"#808080"},"love_heart":{"value":love_heart,"color":get_random_color()},"love_days":{"value":get_count(),"color":"#CC00FF"},"words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
-res2 = wm.send_template(user_id_other, template_id, data)
-print(res2)
+# res2 = wm.send_template(user_id_other, template_id, data)
+# print(res2)
 # res3 = wm.send_template(user_id_third, template_id, data)
 # print(res3)
 
